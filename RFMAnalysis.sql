@@ -23,5 +23,6 @@ SUM(SalesAmount) AS SalesAmount
   GROUP BY CSO.CustomerKey
   ORDER BY CSO.CustomerKey
 
+  
 
 

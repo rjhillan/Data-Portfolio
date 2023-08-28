@@ -6,6 +6,22 @@
 
 # Let's say that you are a Saas B2C company developing a new product. 
 # It's a more expensive product than usual, so it would only be relevant to your highest spenders.
-# Using AdventureWorksDW2017 - "FactInternetSales" '
+# Using the 'AdventureWorksDW2017' data, speficially the "FactInternetSales" dataset, we can demonstrate the above.
+
+  WITH CustomerSalesOrders AS 
+(
+SELECT FIS.CustomerKey,
+FIS.SalesOrderNumber,
+SUM(SalesAmount) AS SalesAmount
+  FROM FactInternetSales FIS
+  GROUP BY FIS.CustomerKey, FIS.SalesORderNumber
+  )
+  SELECT CSO.CustomerKey,
+  COUNT(*) AS SalesAmount,
+  SUM(CSO.SalesAmount) AS SalesAmount
+  FROM CustomerSalesOrders CSO
+  GROUP BY CSO.CustomerKey
+  ORDER BY CSO.CustomerKey
+
 
 

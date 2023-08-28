@@ -8,7 +8,7 @@
 # It's a more expensive product than usual, so it would only be relevant to your highest spenders.
 # Using the 'AdventureWorksDW2017' data, speficially the "FactInternetSales" dataset, we can demonstrate the above.
 
-  WITH CustomerSalesOrders AS 
+WITH CustomerSalesOrders AS 
 (
 SELECT FIS.CustomerKey,
 FIS.SalesOrderNumber,
